@@ -4,21 +4,10 @@
   box-sizing: border-box;
   font-family: "Martel Sans", sans-serif;
 }
-/* @font-face {
-  font-family: 'MartelSans';
-  src: url('./assets/fonts/MartelSans-Black.ttf') format("tff"), 
-  url('./assets/fonts/MartelSans-Bold.ttf') format("tff"),
-  url('./assets/fonts/MartelSans-ExtraBold.ttf') format("tff"),
-  url('./assets/fonts/MartelSans-ExtraLight.ttf') format("tff"),
-  url('./assets/fonts/MartelSans-Light.ttf') format("tff"),
-  url('./assets/fonts/MartelSans-Regular.ttf') format("tff"),
-  url('./assets/fonts/MartelSans-SemiBold.ttf') format("tff");
-} */
 body {
   background-color: #c8e4f9;
   color: white;
   overflow: auto;
-  /* font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
 }
 .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
