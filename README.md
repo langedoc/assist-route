@@ -5,20 +5,25 @@ Assist Route is an application that helps the school bus assistant manage the at
 
 ## Features:
 
-* Add, modify and delete student data.
-* Drop-down list to choose the route.
-* Display with information about the stops on the selected route.
-* Display with information about the students who take the bus at the selected stop.
+✏️ Add, modify and delete student data.
+
+🚌 Drop-down list to choose the route.
+
+🚏 Display with information about the stops on the selected route.
+
+🎓 Display with information about the students who take the bus at the selected stop.
 
 ## Technologies Used
 
 * Backend:
-    * Node.js
-    * Express.js
-    * PostgreSQL
-    * Sequelize
+  
+![Static Badge](https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge)![Static Badge](https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=Express)![Static Badge](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)![Static Badge](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white)
+
 * Frontend:
-    * React with Vite
+
+![Static Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
+
+
     * CSS
 
 # Getting started
