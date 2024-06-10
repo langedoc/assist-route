@@ -21,10 +21,8 @@ Assist Route is an application that helps the school bus assistant manage the at
 
 * Frontend:
 
-![Static Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)
+![Static Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)![Static Badge](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-
-    * CSS
 
 # Getting started
 
