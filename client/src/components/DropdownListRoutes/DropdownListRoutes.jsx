@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import RouteInfoDisplay from "../RouteInfoDisplay/RouteInfoDisplay";
+import { useState, useEffect } from 'react';
+import RouteInfoDisplay from '../RouteInfoDisplay/RouteInfoDisplay';
 import './DropdownListRoutes.css';
 
 function DropdownListRoutes ({routes, students, setSelectedStudent, setShowStudentCard, onClose}) {
@@ -16,7 +16,9 @@ function DropdownListRoutes ({routes, students, setSelectedStudent, setShowStude
   // To display info of the selected route in the route info display section
   useEffect(() => {
     if (selectedRoute) {
-      const selectedRouteInfo = routes.filter( route => route.id === selectedRoute);
+      const selectedRouteInfo = routes.filter(
+        route => route.id === selectedRoute
+      );
       setRouteInfo(selectedRouteInfo);
     } else {
       setRouteInfo(null);
@@ -25,15 +27,30 @@ function DropdownListRoutes ({routes, students, setSelectedStudent, setShowStude
 
   return (
     <div id="routeInfoContainer">
-      <select id="dropdownRoutes" value={selectedRoute} onChange={handleSelectChange}>
-        <option disabled value="">Choose your route...</option>
-        {routes.map( route => (
+      <select
+        id="dropdownRoutes"
+        value={selectedRoute}
+        onChange={handleSelectChange}
+      >
+        <option disabled value=''>
+          Choose your route...
+        </option>
+        {routes.map((route) => (
           <option key={route.id} value={route.id}>
             {route.name} - {route.type}
           </option>
         ))}
       </select>
-      {routeInfo && <RouteInfoDisplay routeInfo={routeInfo} students={students} stopStudents={stopStudents} setStopStudents={setStopStudents} setSelectedStudent={setSelectedStudent} setShowStudentCard={setShowStudentCard} onClose={onClose}/>}
+      {routeInfo && (
+        <RouteInfoDisplay
+          routeInfo={routeInfo}
+          students={students}
+          stopStudents={stopStudents}
+          setStopStudents={setStopStudents}
+          setSelectedStudent={setSelectedStudent}
+          setShowStudentCard={setShowStudentCard}
+          onClose={onClose}
+        />)}
     </div>
   );
 }

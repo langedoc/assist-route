@@ -6,7 +6,7 @@ nav {
   padding-left: 40px;
   padding-right: 40px;
   display: flex;
-  justify-content:space-between
+  justify-content:space-between;
 }
 #projectName {
   font-size: xx-large;
