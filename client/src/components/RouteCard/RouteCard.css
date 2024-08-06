@@ -2,4 +2,14 @@
     width: 15rem;
     border: none;
     color: #215E82;
-  }
+}
+
+.evening {
+    background-color: #215E82;
+    color: white;
+}
+
+.morning {
+    background-color: #F2F2F2;
+    color: #215E82;
+}

@@ -4,7 +4,7 @@ import Sabadell from '../../assets/RoutesImages/Sabadell.svg';
 
 export default function RouteCard({ route }) {
   return (
-    <div className="card card-container">
+    <div className={`card card-container ${route.type==='evening' ? 'evening' : 'morning'}`}>
       <img src={Sabadell} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{route.name}</h5>
