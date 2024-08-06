@@ -6,8 +6,7 @@ import AllStudentsList from './components/AllStudentsList/AllStudentsList';
 import NewStudentForm from './components/NewStudentForm/NewStudentForm';
 import StudentCard from './components/StudentCard/StudentCard';
 import { initFetchData } from './services/Api.service';
-
-
+import RouteCaroussel from './components/RoutesCaroussel/RoutesCaroussel';
 
 function App() {
   const [routes, setRoutes] = useState([]); // routes data
@@ -31,6 +30,7 @@ function App() {
     <>
       < NavBar toggleStudentsList={toggleStudentsList}/>
       <main>
+        <RouteCaroussel routes={routes} />
         <DropdownListRoutes 
           routes={routes}
           students={students}
