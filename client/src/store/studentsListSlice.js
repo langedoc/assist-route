@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    showStudentsList: 'false',
+    showStudentsList: false,
 };
 
 export const studentsListSlice = createSlice({
@@ -14,5 +14,5 @@ export const studentsListSlice = createSlice({
     },
 });
 
-export const { toggleStudentList} = studentsListSlice.actions;
+export const { toggleStudentsList} = studentsListSlice.actions;
 export default studentsListSlice.reducer;

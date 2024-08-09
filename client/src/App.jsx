@@ -7,11 +7,13 @@ import NewStudentForm from './components/NewStudentForm/NewStudentForm';
 import StudentCard from './components/StudentCard/StudentCard';
 import { initFetchData } from './services/Api.service';
 import RouteCaroussel from './components/RoutesCaroussel/RoutesCaroussel';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [routes, setRoutes] = useState([]); // routes data
   const [students, setStudents] = useState([]); // students data
-  const [showStudents, setShowStudents] = useState(false); // condition to show the list of students on button click
+  const showStudents = useSelector((state) => state.studentsList.showStudentsList);
+  console.log(showStudents);
   const [showNewStudentForm, setShowNewStudentForm ] = useState(false); // condition to show the form for adding new student on button click
   const [showStudentCard, setShowStudentCard] = useState(false); // condition to show the card with complete information about student
   const [selectedStudent, setSelectedStudent] = useState('');
@@ -21,14 +23,9 @@ function App() {
     initFetchData({setStudents, setRoutes});
   }, []);
 
-  // Function to control visibility of the list of all students
-  function toggleStudentsList () {
-    setShowStudents(!showStudents);
-  }
-
   return (
     <>
-      < NavBar toggleStudentsList={toggleStudentsList}/>
+      < NavBar/>
       <main>
         <RouteCaroussel routes={routes} />
         <DropdownListRoutes 
@@ -44,7 +41,6 @@ function App() {
               students={students}
               setSelectedStudent={setSelectedStudent}
               setShowStudentCard={setShowStudentCard}
-              onClose={() => setShowStudents(false)}
               onSubmit={() => setShowNewStudentForm(true)}
             />
           </div>
