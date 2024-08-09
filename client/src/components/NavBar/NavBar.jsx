@@ -1,6 +1,10 @@
+import { toggleStudentsList } from '../../store/componentsVisibilitySlice';
 import './NavBar.css';
+import { useDispatch } from 'react-redux';
 
-function NavBar ({ toggleStudentsList }) {
+function NavBar () {
+
+  const dispatch = useDispatch();
 
   return (
     <nav>
@@ -9,7 +13,7 @@ function NavBar ({ toggleStudentsList }) {
           ASSIST ROUTE
         </h1>
       </div>
-      <button onClick={toggleStudentsList}>Manage students</button>
+      <button onClick={() => dispatch(toggleStudentsList())}>Manage students</button>
     </nav>
   );
 }

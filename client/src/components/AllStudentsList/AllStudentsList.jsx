@@ -1,10 +1,15 @@
 import './AllStudentsList.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { PiStudentDuotone } from 'react-icons/pi';
+import { useDispatch } from 'react-redux';
+import { toggleStudentsList } from '../../store/componentsVisibilitySlice';
 
-
-function AllStudentsList ({students, setSelectedStudent, setShowStudentCard, onClose, onSubmit}) {
+function AllStudentsList ({students, setSelectedStudent, setShowStudentCard, onSubmit}) {
   
+  const dispatch = useDispatch();
+
+  const onClose = () => dispatch(toggleStudentsList());
+
   function handleSelectStudent (e) {
     const { value } = e.target;
     setSelectedStudent(value);
@@ -15,7 +20,7 @@ function AllStudentsList ({students, setSelectedStudent, setShowStudentCard, onC
     <div className="listContainer">
       <AiFillCloseCircle
         className="close"
-        onClick={onClose}
+        onClick={() => { onClose() }}
         aria-label="Close"
       />
       <button
