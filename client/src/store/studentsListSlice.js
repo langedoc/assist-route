@@ -14,5 +14,5 @@ export const studentsListSlice = createSlice({
     },
 });
 
-export const { toggleStudentLIst} = studentsListSlice.actions;
+export const { toggleStudentList} = studentsListSlice.actions;
 export default studentsListSlice.reducer;
