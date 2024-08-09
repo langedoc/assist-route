@@ -2,7 +2,7 @@ import './AllStudentsList.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { PiStudentDuotone } from 'react-icons/pi';
 import { useDispatch } from 'react-redux';
-import { toggleStudentsList } from '../../store/studentsListSlice';
+import { toggleStudentsList } from '../../store/componentsVisibilitySlice';
 
 function AllStudentsList ({students, setSelectedStudent, setShowStudentCard, onSubmit}) {
   

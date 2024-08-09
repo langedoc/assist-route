@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import routesReducer from './routesSlice';
-import studentsListReducer from './studentsListSlice';
+import componentsVisibilityReducer from './componentsVisibilitySlice';
+
 
 export const store = configureStore({
   reducer: {
     routes: routesReducer,
-    studentsList: studentsListReducer,
+    componentsVisibility: componentsVisibilityReducer,
   },
 })

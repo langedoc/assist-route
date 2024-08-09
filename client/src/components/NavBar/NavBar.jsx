@@ -1,4 +1,4 @@
-import { toggleStudentsList } from '../../store/studentsListSlice';
+import { toggleStudentsList } from '../../store/componentsVisibilitySlice';
 import './NavBar.css';
 import { useDispatch } from 'react-redux';
 
