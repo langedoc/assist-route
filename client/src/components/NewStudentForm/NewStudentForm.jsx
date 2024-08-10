@@ -26,7 +26,7 @@ function NewStudentForm ({ routes, students, setStudents }) {
   function handleChange (e) {
     const { name, value } = e.target;
     setFormData({...formData, [name]: value});
-  };
+  }
   
   async function handleSubmit (e) {
     e.preventDefault();
@@ -70,7 +70,7 @@ function NewStudentForm ({ routes, students, setStudents }) {
     } catch (error) {
       console.log('Fetching error:', error);
     }
-  };
+  }
 
   return (
     <div id='newStudentFormContainer'>

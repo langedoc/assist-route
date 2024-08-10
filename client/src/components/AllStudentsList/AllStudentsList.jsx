@@ -2,19 +2,19 @@ import './AllStudentsList.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { PiStudentDuotone } from 'react-icons/pi';
 import { useDispatch } from 'react-redux';
-import { toggleStudentsList, toggleNewStudentForm } from '../../store/componentsVisibilitySlice';
+import { toggleStudentsList, toggleNewStudentForm, toggleStudentCard } from '../../store/componentsVisibilitySlice';
 
-function AllStudentsList ({students, setSelectedStudent, setShowStudentCard}) {
+function AllStudentsList ({students, setSelectedStudent}) {
   
   const dispatch = useDispatch();
 
   const onClose = () => dispatch(toggleStudentsList());
-  const onSubmit = () => dispatch(toggleNewStudentForm())};
+  const onSubmit = () => dispatch(toggleNewStudentForm());
+  const onClickOnStudent = () => dispatch(toggleStudentCard());
 
   function handleSelectStudent (e) {
     const { value } = e.target;
     setSelectedStudent(value);
-    setShowStudentCard(true);
   }
 
   return (
@@ -41,7 +41,8 @@ function AllStudentsList ({students, setSelectedStudent, setShowStudentCard}) {
               type="button"
               className="studentButton"
               onClick={(e) => {
-                handleSelectStudent(e); 
+                handleSelectStudent(e);
+                onClickOnStudent();
                 onClose()
               }}
             >

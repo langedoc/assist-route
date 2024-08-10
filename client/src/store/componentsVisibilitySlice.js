@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     showStudentsList: false,
     showNewStudentForm: false,
+    showStudentCard: false,
 };
 
 export const componentsVisibilitySlice = createSlice({
@@ -15,8 +16,11 @@ export const componentsVisibilitySlice = createSlice({
         toggleNewStudentForm: (state) => {
             state.showNewStudentForm = !state.showNewStudentForm;
           },
+        toggleStudentCard: (state) => {
+            state.showStudentCard = !state.showStudentCard;
+        },
     },
 });
 
-export const { toggleStudentsList, toggleNewStudentForm} = componentsVisibilitySlice.actions;
+export const { toggleStudentsList, toggleNewStudentForm, toggleStudentCard} = componentsVisibilitySlice.actions;
 export default componentsVisibilitySlice.reducer;

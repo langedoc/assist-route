@@ -14,7 +14,7 @@ function App() {
   const [students, setStudents] = useState([]); // students data
   const showStudents = useSelector((state) => state.componentsVisibility.showStudentsList);
   const showNewStudentForm = useSelector((state) => state.componentsVisibility.showNewStudentForm);
-  const [showStudentCard, setShowStudentCard] = useState(false); // condition to show the card with complete information about student
+  const showStudentCard = useSelector((state) => state.componentsVisibility.showStudentCard);
   const [selectedStudent, setSelectedStudent] = useState('');
 
   // Fetching data on init
@@ -31,15 +31,14 @@ function App() {
           routes={routes}
           students={students}
           setSelectedStudent={setSelectedStudent}
-          setShowStudentCard={setShowStudentCard}
-          onClose={() => setShowStudentCard(false)}
+          // setShowStudentCard={setShowStudentCard}
+          // onClose={() => setShowStudentCard(false)}
         />
         {showStudents && (
           <div className="overlay">
             <AllStudentsList 
               students={students}
               setSelectedStudent={setSelectedStudent}
-              setShowStudentCard={setShowStudentCard}
             />
           </div>
         )}
@@ -50,7 +49,6 @@ function App() {
               setStudents={setStudents}
               students={students}
               showNewStudentForm={showNewStudentForm}
-              onClose={() => setShowNewStudentForm(false)}
             />
           </div>
         )}
@@ -60,7 +58,7 @@ function App() {
               students={students}
               selectedStudent={selectedStudent}
               setStudents={setStudents}
-              onClose={() => setShowStudentCard(false)}
+              // onClose={() => setShowStudentCard(false)}
             />
           </div>
         )}
