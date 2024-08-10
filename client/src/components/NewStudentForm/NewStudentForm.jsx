@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import './NewStudentForm.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { toggleNewStudentForm } from '../../store/componentsVisibilitySlice';
+import { useDispatch } from 'react-redux';
 
-function NewStudentForm ({ routes, onClose, students, setStudents }) {
+function NewStudentForm ({ routes, students, setStudents }) {
   const morningRoutes = routes.filter(route => route.type === 'morning');
   const eveningRoutes = routes.filter(route => route.type === 'evening');
+  const dispatch = useDispatch(); 
+  const onClose = () => dispatch(toggleNewStudentForm());
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -72,7 +76,7 @@ function NewStudentForm ({ routes, onClose, students, setStudents }) {
     <div id='newStudentFormContainer'>
       <AiFillCloseCircle
         className="close"
-        onClick={onClose}
+        onClick={() => onClose()}
         aria-label="Close"
       />
       <form id="NewStudentForm" className="form" onSubmit={handleSubmit}>

@@ -9,7 +9,7 @@ function AllStudentsList ({students, setSelectedStudent, setShowStudentCard}) {
   const dispatch = useDispatch();
 
   const onClose = () => dispatch(toggleStudentsList());
-  const onSubmit = () => {dispatch(toggleNewStudentForm())};
+  const onSubmit = () => dispatch(toggleNewStudentForm())};
 
   function handleSelectStudent (e) {
     const { value } = e.target;
