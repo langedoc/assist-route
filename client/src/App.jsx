@@ -13,7 +13,7 @@ function App() {
   const [routes, setRoutes] = useState([]); // routes data
   const [students, setStudents] = useState([]); // students data
   const showStudents = useSelector((state) => state.componentsVisibility.showStudentsList);
-  const [showNewStudentForm, setShowNewStudentForm ] = useState(false); // condition to show the form for adding new student on button click
+  const showNewStudentForm = useSelector((state) => state.componentsVisibility.showNewStudentForm);
   const [showStudentCard, setShowStudentCard] = useState(false); // condition to show the card with complete information about student
   const [selectedStudent, setSelectedStudent] = useState('');
 
@@ -40,7 +40,6 @@ function App() {
               students={students}
               setSelectedStudent={setSelectedStudent}
               setShowStudentCard={setShowStudentCard}
-              onSubmit={() => setShowNewStudentForm(true)}
             />
           </div>
         )}

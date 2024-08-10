@@ -13,7 +13,7 @@ export const componentsVisibilitySlice = createSlice({
             state.showStudentsList = !state.showStudentsList;
         },
         toggleNewStudentForm: (state) => {
-            state.showForm = !state.showForm;
+            state.showNewStudentForm = !state.showNewStudentForm;
           },
     },
 });
