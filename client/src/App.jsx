@@ -10,7 +10,6 @@ import RouteCaroussel from './components/RoutesCaroussel/RoutesCaroussel';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const [routes, setRoutes] = useState([]); // routes data
   const [students, setStudents] = useState([]); // students data
   const showStudents = useSelector((state) => state.componentsVisibility.showStudentsList);
   const showNewStudentForm = useSelector((state) => state.componentsVisibility.showNewStudentForm);
@@ -19,14 +18,14 @@ function App() {
 
   // Fetching data on init
   useEffect( () => {
-    initFetchData({setStudents, setRoutes});
+    initFetchData({setStudents});
   }, []);
 
   return (
     <>
       < NavBar/>
       <main>
-        <RouteCaroussel routes={routes} />
+        <RouteCaroussel/>
         <DropdownListRoutes 
           students={students}
           setSelectedStudent={setSelectedStudent}
@@ -44,7 +43,6 @@ function App() {
         {showNewStudentForm && (
           <div className="overlay">
             <NewStudentForm
-              routes={routes}
               setStudents={setStudents}
               students={students}
               showNewStudentForm={showNewStudentForm}
