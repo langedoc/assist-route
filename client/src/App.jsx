@@ -58,7 +58,6 @@ function App() {
               students={students}
               selectedStudent={selectedStudent}
               setStudents={setStudents}
-              // onClose={() => setShowStudentCard(false)}
             />
           </div>
         )}
