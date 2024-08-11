@@ -1,7 +1,12 @@
 import './StudentCard.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
+import { useDispatch } from 'react-redux';
 
-function StudentCard ({ students, setStudents, selectedStudent, onClose}) {
+function StudentCard ({ students, setStudents, selectedStudent}) {
+  const dispatch = useDispatch();
+  const onClose = () => dispatch(toggleStudentCard());
+  
   const studentData = students.filter( student => student.id === parseInt(selectedStudent))[0];
   const dataToRender = Object.entries(studentData);
   const dataToRenderShort = dataToRender.slice(1);
@@ -33,7 +38,6 @@ function StudentCard ({ students, setStudents, selectedStudent, onClose}) {
       const newList = oldList.filter( item => item.id !== studentData.id );
       return newList;
     });
-    onClose();
   }
   
 
@@ -50,7 +54,7 @@ function StudentCard ({ students, setStudents, selectedStudent, onClose}) {
       <button
         type="button"
         name="deleteStudentButton"
-        onClick={handleDelete}
+        onClick={()=>{handleDelete(); onClose();}}
       >
         DELETE
       </button>
