@@ -3,8 +3,9 @@ import './NewStudentForm.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { toggleNewStudentForm } from '../../store/componentsVisibilitySlice';
 import { useDispatch } from 'react-redux';
+import { routes } from '../../data/routesData';
 
-function NewStudentForm ({ routes, students, setStudents }) {
+function NewStudentForm ({ students, setStudents }) {
   const morningRoutes = routes.filter(route => route.type === 'morning');
   const eveningRoutes = routes.filter(route => route.type === 'evening');
   const dispatch = useDispatch(); 
