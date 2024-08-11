@@ -28,7 +28,6 @@ function App() {
       <main>
         <RouteCaroussel routes={routes} />
         <DropdownListRoutes 
-          routes={routes}
           students={students}
           setSelectedStudent={setSelectedStudent}
           // setShowStudentCard={setShowStudentCard}
