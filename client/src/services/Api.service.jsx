@@ -1,8 +1,6 @@
-import routesData from '../data/routesData.json';
-
 const studentsUrl = 'http://localhost:3000/students'; // URL of the DB with students data
 
-export async function initFetchData ({setStudents, setRoutes}) {
+export async function initFetchData ({setStudents }) {
   try {
     // Fetch students data
     const studentsResponse = await fetch(studentsUrl);
@@ -11,9 +9,6 @@ export async function initFetchData ({setStudents, setRoutes}) {
       a.firstName.localeCompare(b.firstName)
     ); // Students are sorted by name in alphabetical order
     setStudents (sortedStudentsBody);
-        
-    // Set routes data from JSON file
-    setRoutes(routesData);
   } catch (error) {
     console.log('Error fetching data: ', error);
   }

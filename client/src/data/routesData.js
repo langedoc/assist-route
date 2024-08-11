@@ -1,4 +1,5 @@
-[{
+export const routes = [
+  {
     "id": "1",
     "type": "morning",
     "name": "R5 SABADELL",
