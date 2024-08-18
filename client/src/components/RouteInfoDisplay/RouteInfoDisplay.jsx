@@ -1,9 +1,13 @@
 import './RouteInfoDisplay.css';
 import { TbBusStop } from 'react-icons/tb';
 import { PiStudentDuotone } from 'react-icons/pi';
+import { selectRouteInfo } from '../../store/routesSlice';
+import { useSelector } from 'react-redux';
 
-function RouteInfoDisplay ({routeInfo, students, setStopStudents, stopStudents, setSelectedStudent, setShowStudentCard}) {
+function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelectedStudent, setShowStudentCard}) {
   
+  const routeInfo = useSelector(selectRouteInfo);
+
   function handleSelectStop (event) {
     const {value} = event.target;
     setStopStudents(students.filter( student => ((student.morningRoute === routeInfo[0].name && student.morningStop === value) || ( student.eveningRoute === routeInfo[0].name && student.eveningStop === value))));

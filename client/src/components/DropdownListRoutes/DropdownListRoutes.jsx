@@ -2,16 +2,23 @@ import { useState, useEffect } from 'react';
 import RouteInfoDisplay from '../RouteInfoDisplay/RouteInfoDisplay';
 import './DropdownListRoutes.css';
 import { routes } from '../../data/routesData.js';
-import { selectedRoute, setSelectedRoute } from '../../store/routesSlice';
+import { selectSelectedRoute, setSelectedRoute, selectRouteInfo, setRouteInfo  } from '../../store/routesSlice';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard, onClose}) {
 
-  const [routeInfo, setRouteInfo] = useState(null);
+
+  const routeInfo = useSelector(selectRouteInfo);
+  const selectedRoute = useSelector(selectSelectedRoute);
   const [stopStudents, setStopStudents] = useState([]);
+
+  const dispatch = useDispatch();
 
   // Function to set the selected route
   const handleSelectChange = (event) => {
-    setSelectedRoute(event.target.value);
+    const selectedRoute = event.target.value;
+    dispatch(setSelectedRoute(selectedRoute));
     setStopStudents([]);
   };
 
@@ -21,11 +28,11 @@ function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard,
       const selectedRouteInfo = routes.filter(
         route => route.id === selectedRoute
       );
-      setRouteInfo(selectedRouteInfo);
+      dispatch(setRouteInfo(selectedRouteInfo));
     } else {
-      setRouteInfo(null);
+      dispatch(setRouteInfo(null));
     }
-  }, []);
+  }, [ selectedRoute, dispatch]);
 
   return (
     <div id="routeInfoContainer">
@@ -45,7 +52,6 @@ function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard,
       </select>
       {routeInfo && (
         <RouteInfoDisplay
-          routeInfo={routeInfo}
           students={students}
           stopStudents={stopStudents}
           setStopStudents={setStopStudents}
