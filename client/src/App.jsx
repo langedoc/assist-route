@@ -8,12 +8,13 @@ import StudentCard from './components/StudentCard/StudentCard';
 import { initFetchData } from './services/Api.service';
 import RouteCaroussel from './components/RoutesCaroussel/RoutesCaroussel';
 import { useSelector } from 'react-redux';
+import { selectStudentsList, selectNewStudentForm, selectStudentCard } from './store/componentsVisibilitySlice';
 
 function App() {
   const [students, setStudents] = useState([]); // students data
-  const showStudents = useSelector((state) => state.componentsVisibility.showStudentsList);
-  const showNewStudentForm = useSelector((state) => state.componentsVisibility.showNewStudentForm);
-  const showStudentCard = useSelector((state) => state.componentsVisibility.showStudentCard);
+  const showStudents = useSelector(selectStudentsList);
+  const showNewStudentForm = useSelector(selectNewStudentForm);
+  const showStudentCard = useSelector(selectStudentCard);
   const [selectedStudent, setSelectedStudent] = useState('');
 
   // Fetching data on init
