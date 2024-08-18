@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import RouteInfoDisplay from '../RouteInfoDisplay/RouteInfoDisplay';
 import './DropdownListRoutes.css';
 import { routes } from '../../data/routesData.js';
+import { selectedRoute, setSelectedRoute } from '../../store/routesSlice';
 
 function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard, onClose}) {
-  const [selectedRoute, setSelectedRoute] = useState('');
+
   const [routeInfo, setRouteInfo] = useState(null);
   const [stopStudents, setStopStudents] = useState([]);
 
@@ -24,7 +25,7 @@ function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard,
     } else {
       setRouteInfo(null);
     }
-  }, [selectedRoute]);
+  }, []);
 
   return (
     <div id="routeInfoContainer">
