@@ -3,10 +3,9 @@ import RouteInfoDisplay from '../RouteInfoDisplay/RouteInfoDisplay';
 import './DropdownListRoutes.css';
 import { routes } from '../../data/routesData.js';
 import { selectSelectedRoute, setSelectedRoute, selectRouteInfo, setRouteInfo  } from '../../store/routesSlice';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard, onClose}) {
+function DropdownListRoutes ({ students, setSelectedStudent}) {
 
 
   const routeInfo = useSelector(selectRouteInfo);
@@ -56,8 +55,6 @@ function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard,
           stopStudents={stopStudents}
           setStopStudents={setStopStudents}
           setSelectedStudent={setSelectedStudent}
-          setShowStudentCard={setShowStudentCard}
-          onClose={onClose}
         />)}
     </div>
   );

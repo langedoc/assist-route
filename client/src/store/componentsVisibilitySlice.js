@@ -23,4 +23,7 @@ export const componentsVisibilitySlice = createSlice({
 });
 
 export const { toggleStudentsList, toggleNewStudentForm, toggleStudentCard} = componentsVisibilitySlice.actions;
+export const selectStudentsList = (state) => state.componentsVisibility.showStudentsList;
+export const selectNewStudentForm = (state) => state.componentsVisibility.showNewStudentForm;
+export const selectStudentCard = (state) => state.componentsVisibility.showStudentCard;
 export default componentsVisibilitySlice.reducer;
