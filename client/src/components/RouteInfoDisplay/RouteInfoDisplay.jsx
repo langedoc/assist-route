@@ -2,11 +2,13 @@ import './RouteInfoDisplay.css';
 import { TbBusStop } from 'react-icons/tb';
 import { PiStudentDuotone } from 'react-icons/pi';
 import { selectRouteInfo } from '../../store/routesSlice';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
 
-function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelectedStudent, setShowStudentCard}) {
+function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelectedStudent}) {
   
   const routeInfo = useSelector(selectRouteInfo);
+  const dispatch = useDispatch();
 
   function handleSelectStop (event) {
     const {value} = event.target;
@@ -16,7 +18,7 @@ function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelecte
   function handleSelectStudent (e) {
     const { value } = e.target;
     setSelectedStudent(value);
-    setShowStudentCard(true);
+    dispatch(toggleStudentCard());
   }
 
   return (

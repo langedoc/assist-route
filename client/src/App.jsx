@@ -30,8 +30,6 @@ function App() {
         <DropdownListRoutes 
           students={students}
           setSelectedStudent={setSelectedStudent}
-          // setShowStudentCard={setShowStudentCard}
-          // onClose={() => setShowStudentCard(false)}
         />
         {showStudents && (
           <div className="overlay">

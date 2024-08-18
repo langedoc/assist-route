@@ -5,7 +5,7 @@ import { routes } from '../../data/routesData.js';
 import { selectSelectedRoute, setSelectedRoute, selectRouteInfo, setRouteInfo  } from '../../store/routesSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
-function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard, onClose}) {
+function DropdownListRoutes ({ students, setSelectedStudent}) {
 
 
   const routeInfo = useSelector(selectRouteInfo);
@@ -55,8 +55,6 @@ function DropdownListRoutes ({ students, setSelectedStudent, setShowStudentCard,
           stopStudents={stopStudents}
           setStopStudents={setStopStudents}
           setSelectedStudent={setSelectedStudent}
-          setShowStudentCard={setShowStudentCard}
-          onClose={onClose}
         />)}
     </div>
   );
