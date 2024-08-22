@@ -5,12 +5,15 @@ import DropdownListRoutes from './components/DropdownListRoutes/DropdownListRout
 import AllStudentsList from './components/AllStudentsList/AllStudentsList';
 import NewStudentForm from './components/NewStudentForm/NewStudentForm';
 import StudentCard from './components/StudentCard/StudentCard';
-import { initFetchData } from './services/Api.service';
+// import { initFetchData } from './services/Api.service';
 import RouteCaroussel from './components/RoutesCaroussel/RoutesCaroussel';
 import { useSelector } from 'react-redux';
 import { selectStudentsList, selectNewStudentForm, selectStudentCard } from './store/componentsVisibilitySlice';
+import { fetchStudents } from './store/students-actions';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
   const [students, setStudents] = useState([]); // students data
   const showStudents = useSelector(selectStudentsList);
   const showNewStudentForm = useSelector(selectNewStudentForm);
@@ -19,8 +22,9 @@ function App() {
 
   // Fetching data on init
   useEffect( () => {
-    initFetchData({setStudents});
-  }, []);
+    // initFetchData({setStudents});
+    dispatch(fetchStudents());
+  }, [dispatch]);
 
   return (
     <>
