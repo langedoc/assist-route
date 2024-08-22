@@ -44,7 +44,6 @@ function App() {
             <NewStudentForm
               setStudents={setStudents}
               students={students}
-              showNewStudentForm={showNewStudentForm}
             />
           </div>
         )}
