@@ -35,10 +35,9 @@ function AllStudentsList () {
       </button>
       <div id="allStudentsList" className="list">
         {students.map((student) => (
-          <>
+          <div key={student.id}>
             <PiStudentDuotone />
             <button
-              key={student.id}
               name="studentInfo"
               value={student.id}
               type="button"
@@ -51,7 +50,7 @@ function AllStudentsList () {
             >
               {student.firstName} {student.lastName}
             </button>
-          </>
+          </div>
         ))}
       </div>
     </div>
