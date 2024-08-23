@@ -1,10 +1,13 @@
 import './AllStudentsList.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { PiStudentDuotone } from 'react-icons/pi';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { toggleStudentsList, toggleNewStudentForm, toggleStudentCard } from '../../store/componentsVisibilitySlice';
+import { selectStudents } from '../../store/studentsSlice';
 
-function AllStudentsList ({students, setSelectedStudent}) {
+function AllStudentsList ({ setSelectedStudent}) {
+
+  const students = useSelector(selectStudents);
   
   const dispatch = useDispatch();
 
