@@ -2,13 +2,17 @@ import { useState } from 'react';
 import './NewStudentForm.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { toggleNewStudentForm } from '../../store/componentsVisibilitySlice';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { routes } from '../../data/routesData';
+import { selectStudents, setStudents } from '../../store/studentsSlice';
 
-function NewStudentForm ({ students, setStudents }) {
+function NewStudentForm () {
+  const students = useSelector(selectStudents);
+  const dispatch = useDispatch();
+
   const morningRoutes = routes.filter(route => route.type === 'morning');
   const eveningRoutes = routes.filter(route => route.type === 'evening');
-  const dispatch = useDispatch(); 
+  
   const onClose = () => dispatch(toggleNewStudentForm());
 
   const [formData, setFormData] = useState({
@@ -61,12 +65,12 @@ function NewStudentForm ({ students, setStudents }) {
 
       const newStudent = await res.json();
 
-      setStudents(
+      dispatch(setStudents(
         [
           ...students,
           newStudent
         ]
-      );
+      ));
       onClose();
     } catch (error) {
       console.log('Fetching error:', error);
