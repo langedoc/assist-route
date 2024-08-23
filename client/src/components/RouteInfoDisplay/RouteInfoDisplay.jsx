@@ -4,10 +4,12 @@ import { PiStudentDuotone } from 'react-icons/pi';
 import { selectRouteInfo } from '../../store/routesSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
+import { selectStudents, setSelectedStudent } from '../../store/studentsSlice';
 
-function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelectedStudent}) {
+function RouteInfoDisplay ({ setStopStudents, stopStudents}) {
   
   const routeInfo = useSelector(selectRouteInfo);
+  const students = useSelector(selectStudents);
   const dispatch = useDispatch();
 
   function handleSelectStop (event) {
@@ -17,7 +19,7 @@ function RouteInfoDisplay ({ students, setStopStudents, stopStudents, setSelecte
 
   function handleSelectStudent (e) {
     const { value } = e.target;
-    setSelectedStudent(value);
+    dispatch(setSelectedStudent(value));
     dispatch(toggleStudentCard());
   }
 

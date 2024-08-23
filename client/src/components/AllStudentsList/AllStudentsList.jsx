@@ -3,9 +3,9 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { PiStudentDuotone } from 'react-icons/pi';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleStudentsList, toggleNewStudentForm, toggleStudentCard } from '../../store/componentsVisibilitySlice';
-import { selectStudents } from '../../store/studentsSlice';
+import { selectStudents, setSelectedStudent } from '../../store/studentsSlice';
 
-function AllStudentsList ({ setSelectedStudent}) {
+function AllStudentsList () {
 
   const students = useSelector(selectStudents);
   
@@ -17,7 +17,7 @@ function AllStudentsList ({ setSelectedStudent}) {
 
   function handleSelectStudent (e) {
     const { value } = e.target;
-    setSelectedStudent(value);
+    dispatch(setSelectedStudent(value));
   }
 
   return (

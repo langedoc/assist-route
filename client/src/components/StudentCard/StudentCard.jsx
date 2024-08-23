@@ -1,9 +1,14 @@
 import './StudentCard.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectStudents, selectSelectedStudent, setStudents } from '../../store/studentsSlice';
 
-function StudentCard ({ students, setStudents, selectedStudent}) {
+function StudentCard () {
+  
+  const students = useSelector(selectStudents);
+  const selectedStudent = useSelector(selectSelectedStudent);
+
   const dispatch = useDispatch();
   const onClose = () => dispatch(toggleStudentCard());
   
