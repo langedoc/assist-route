@@ -23,3 +23,19 @@ export const fetchStudents = () => {
     }
   };
 };
+
+export const deleteStudent = (id) => {
+  return async () => {
+    const response = await fetch(
+      'http://localhost:3000/students/' + id,
+      {
+        method: 'DELETE',
+        mode: 'cors',
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error('Could not delete student!');
+    }
+  };
+}

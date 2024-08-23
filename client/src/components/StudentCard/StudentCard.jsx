@@ -3,6 +3,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectStudents, selectSelectedStudent, setStudents } from '../../store/studentsSlice';
+import { deleteStudent } from '../../store/students-actions';
 
 function StudentCard () {
   
@@ -30,19 +31,11 @@ function StudentCard () {
   }
   
   async function handleDelete () {
-    
-    const res = await fetch(
-      'http://localhost:3000/students/'+studentData.id,
-      {
-        method: "DELETE",
-        mode: "cors"
-      }
-    );
+    // delete student from DB
+    dispatch(deleteStudent(studentData.id));
     // delete student from list
-    setStudents(oldList => {
-      const newList = oldList.filter( item => item.id !== studentData.id );
-      return newList;
-    });
+    const newStudents = students.filter( student => student.id !== studentData.id);
+    dispatch(setStudents(newStudents));
   }
   
 
