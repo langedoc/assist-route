@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import RouteInfoDisplay from '../RouteInfoDisplay/RouteInfoDisplay';
 import './DropdownListRoutes.css';
 import { routes } from '../../data/routesData.js';
 import { selectSelectedRoute, setSelectedRoute, selectRouteInfo, setRouteInfo  } from '../../store/routesSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { setStopStudents } from '../../store/studentsSlice';
 
-function DropdownListRoutes ({ students, setSelectedStudent}) {
-
+function DropdownListRoutes () {
 
   const routeInfo = useSelector(selectRouteInfo);
   const selectedRoute = useSelector(selectSelectedRoute);
-  const [stopStudents, setStopStudents] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -18,7 +17,7 @@ function DropdownListRoutes ({ students, setSelectedStudent}) {
   const handleSelectChange = (event) => {
     const selectedRoute = event.target.value;
     dispatch(setSelectedRoute(selectedRoute));
-    setStopStudents([]);
+    dispatch(setStopStudents([]));
   };
 
   // To display info of the selected route in the route info display section
@@ -50,12 +49,8 @@ function DropdownListRoutes ({ students, setSelectedStudent}) {
         ))}
       </select>
       {routeInfo && (
-        <RouteInfoDisplay
-          students={students}
-          stopStudents={stopStudents}
-          setStopStudents={setStopStudents}
-          setSelectedStudent={setSelectedStudent}
-        />)}
+        <RouteInfoDisplay/>
+      )}
     </div>
   );
 }
