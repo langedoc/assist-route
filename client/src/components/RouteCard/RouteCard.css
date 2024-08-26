@@ -3,6 +3,9 @@
     border: none;
     color: #215E82;
 }
+.card-container:hover {
+    border: 3px solid #FFC94C;
+}
 
 .evening {
     background-color: #215E82;
