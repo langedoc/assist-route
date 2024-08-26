@@ -8,6 +8,17 @@ nav {
   display: flex;
   justify-content:space-between;
 }
+.nav-button {
+  background-color: transparent;
+  color: #FFC94C;
+  border: 1px solid #FFC94C;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+.nav-button:hover {
+  background-color: #FFC94C;
+  color: #215E82;
+}
 #projectName {
   font-size: xx-large;
 }
