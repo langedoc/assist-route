@@ -7,7 +7,7 @@ function NavBar () {
   const dispatch = useDispatch();
 
   return (
-    <nav>
+    <nav className="navbar-expand{-sm|-md|-lg|-xl|-xxl}">
       <div>
         <h1 id="projectName" className="lilita-one-regular">
           ASSIST ROUTE
