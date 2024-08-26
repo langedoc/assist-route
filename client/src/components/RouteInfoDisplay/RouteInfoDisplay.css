@@ -37,6 +37,15 @@ h3 {
   align-items: flex-start;
   color: white;
 }
+.studentButton {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+}
+.studentButton:hover {
+  background-color: white; /* Background color on hover */
+  color: #215E82;
+}
 .studentIcon {
   margin-right: 0.5rem;
 }
