@@ -35,14 +35,16 @@ function RouteInfoDisplay () {
         Choose the stop to see the users of the stop
       </p>
       <div id="routeInfoDisplay">
-        <div id="stopsList" className="list">
+        {/* <div id="stopsList" className="list"> */}
+        <div className="d-grid gap-2">
           {routeInfo[0].stops.map((stop) => (
             <div key={stop.id}>
               <TbBusStop /> 
               <button
                 name="See students"
                 type="button"
-                className="stopButton"
+                // className="stopButton"
+                className="btn stopButton"
                 onClick={handleSelectStop}
                 value={stop.name}
               >
