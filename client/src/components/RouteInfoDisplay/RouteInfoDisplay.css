@@ -15,11 +15,20 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+h3 {
+  font-weight: 700;
+}
 .stopButton {
-  background-color: #215E82;
+  background-color: transparent;
+  color: #215E82;
+  padding-right: 1rem;
+  margin-left: 0.5rem;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+  transition: background-color 0.3s ease;
+}
+.stopButton:hover {
+  background-color: #215E82; /* Background color on hover */
   color: white;
-  padding: 5px;
-  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
 }
 #stopStudentsList {
   margin-top: 20px;
@@ -28,6 +37,15 @@
   align-items: flex-start;
   color: white;
 }
+.studentButton {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+}
+.studentButton:hover {
+  background-color: white; /* Background color on hover */
+  color: #215E82;
+}
 .studentIcon {
-  margin-right: 10px;
+  margin-right: 0.5rem;
 }

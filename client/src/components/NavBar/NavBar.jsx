@@ -13,7 +13,13 @@ function NavBar () {
           ASSIST ROUTE
         </h1>
       </div>
-      <button onClick={() => dispatch(toggleStudentsList())}>Manage students</button>
+      <button
+        onClick={() => dispatch(toggleStudentsList())}
+        className="nav-button"
+        type="button"
+      >
+        Manage students
+      </button>
     </nav>
   );
 }

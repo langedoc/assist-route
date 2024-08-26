@@ -35,14 +35,14 @@ function RouteInfoDisplay () {
         Choose the stop to see the users of the stop
       </p>
       <div id="routeInfoDisplay">
-        <div id="stopsList" className="list">
+        <div className="d-grid gap-2">
           {routeInfo[0].stops.map((stop) => (
             <div key={stop.id}>
               <TbBusStop /> 
               <button
                 name="See students"
                 type="button"
-                className="stopButton"
+                className="btn stopButton"
                 onClick={handleSelectStop}
                 value={stop.name}
               >
@@ -55,12 +55,12 @@ function RouteInfoDisplay () {
           <p className="italicThin">
             Click on the user to see complete information
           </p>
-          <div className="list">
+          <div className="d-grid gap-2">
             {stopStudents.map( student => (
               <div key={student.id}>
                 <PiStudentDuotone className='studentIcon' />
                 <button
-                  className="studentButton"
+                  className="btn studentButton"
                   value={student.id}
                   onClick={(e) => {handleSelectStudent(e)}}>
                     {student.firstName} {student.lastName}
