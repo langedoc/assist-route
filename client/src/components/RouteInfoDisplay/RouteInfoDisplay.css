@@ -27,7 +27,7 @@ h3 {
   transition: background-color 0.3s ease;
 }
 .stopButton:hover {
-  background-color: #215E82; /* Background color on hover */
+  background-color: #215E82;
   color: white;
 }
 #stopStudentsList {
@@ -43,7 +43,7 @@ h3 {
   padding: 0.5rem;
 }
 .studentButton:hover {
-  background-color: white; /* Background color on hover */
+  background-color: white;
   color: #215E82;
 }
 .studentIcon {

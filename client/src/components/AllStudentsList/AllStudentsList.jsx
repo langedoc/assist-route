@@ -28,7 +28,8 @@ function AllStudentsList () {
         aria-label="Close"
       />
       <button
-        id="addNewStudentButton"
+        style={{borderRadius: '5px'}}
+        type="button"
         onClick={() => { onClose(); onSubmit();}}
       >
         Add new student
@@ -36,12 +37,12 @@ function AllStudentsList () {
       <div id="allStudentsList" className="list">
         {students.map((student) => (
           <div key={student.id}>
-            <PiStudentDuotone />
+            <PiStudentDuotone className='studentIcon'/>
             <button
               name="studentInfo"
               value={student.id}
               type="button"
-              className="studentButton"
+              className="btn studentButton"
               onClick={(e) => {
                 handleSelectStudent(e);
                 onClickOnStudent();
