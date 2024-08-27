@@ -52,6 +52,7 @@ function StudentCard () {
       <button
         type="button"
         name="deleteStudentButton"
+        style={{borderRadius: '5px'}}
         onClick={()=>{handleDelete(); onClose();}}
       >
         DELETE
