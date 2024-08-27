@@ -1,9 +1,9 @@
 .fieldsList{
   border: solid white;
   border-radius: 10px;
-  padding: 20px;
-  gap: 20px
+  padding: 1.5rem;
+  gap: 1rem;
 }
 #elValue {
-  margin-top: 10px;
+  margin-top: 0.5rem;
 }

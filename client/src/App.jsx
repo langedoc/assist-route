@@ -43,9 +43,7 @@ function App() {
           </div>
         )}
         {showStudentCard && (
-          <div className="overlay">
-            <StudentCard/>
-          </div>
+          <StudentCard/>
         )}
       </main>
     </>

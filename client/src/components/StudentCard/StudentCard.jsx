@@ -40,23 +40,25 @@ function StudentCard () {
   
 
   return (
-    <div className="listContainer">
-      <AiFillCloseCircle
-        className="close"
-        onClick={onClose}
-        aria-label="Close"
-      />
-      <div className="fieldsList">
-        {studentInfoElements}
+    <div className="overlay">
+      <div className="listContainer">
+        <AiFillCloseCircle
+          className="close"
+          onClick={onClose}
+          aria-label="Close"
+        />
+        <div className="fieldsList">
+          {studentInfoElements}
+        </div>
+        <button
+          type="button"
+          name="deleteStudentButton"
+          style={{borderRadius: '5px'}}
+          onClick={()=>{handleDelete(); onClose();}}
+        >
+          DELETE
+        </button>
       </div>
-      <button
-        type="button"
-        name="deleteStudentButton"
-        style={{borderRadius: '5px'}}
-        onClick={()=>{handleDelete(); onClose();}}
-      >
-        DELETE
-      </button>
     </div>
   );
 }
