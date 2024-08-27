@@ -7,25 +7,30 @@ main {
   flex-direction: column;
 }
 button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  color: #FFC94C;
+  border: 1px solid #FFC94C;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+button:hover {
   background-color: #FFC94C;
   color: #215E82;
-  border: none;
-  border-radius: 3px;
-  padding: 5px;
-  font-weight: 700;
-  cursor: pointer;
 }
 .listContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  gap: 20px;
+  gap: 1rem;
   background-color: #215E82;
   border: none;
   border-radius: 10px;
-  margin: 20px;
-  padding: 20px;
+  margin: 1rem;
+  padding: 1.5rem;
   overflow: auto;
 }
 .list {
@@ -54,12 +59,12 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(9, 10, 26, 0.8);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: 999; /* Para que el overlay esté sobre el resto del contenido */
+  align-items: start;
+  z-index: 10; /* on top of everything */
 }
 .close {
   cursor: pointer;

@@ -1,10 +1,11 @@
 .card-container {
     width: 15rem;
+    margin: 1rem;
     border: none;
     color: #215E82;
 }
 .card-container:hover {
-    border: 3px solid #FFC94C;
+    box-shadow: 0 0 10px 5px #FFC94C;
 }
 
 .evening {

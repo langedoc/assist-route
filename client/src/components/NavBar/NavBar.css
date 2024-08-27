@@ -1,5 +1,6 @@
 nav {
   background-color: #215E82;
+  /* background: linear-gradient(45deg, #215E82, transparent); */
   color: #FFC94C;
   position: relative;
   padding: 15px;
@@ -7,17 +8,6 @@ nav {
   padding-right: 40px;
   display: flex;
   justify-content:space-between;
-}
-.nav-button {
-  background-color: transparent;
-  color: #FFC94C;
-  border: 1px solid #FFC94C;
-  border-radius: 5px;
-  padding: 0.5em 1em;
-}
-.nav-button:hover {
-  background-color: #FFC94C;
-  color: #215E82;
 }
 #projectName {
   font-size: xx-large;

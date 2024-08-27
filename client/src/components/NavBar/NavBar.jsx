@@ -15,7 +15,7 @@ function NavBar () {
       </div>
       <button
         onClick={() => dispatch(toggleStudentsList())}
-        className="nav-button"
+        style={{borderRadius: '5px'}}
         type="button"
       >
         Manage students
