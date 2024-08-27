@@ -33,14 +33,10 @@ function App() {
           <RouteInfoDisplay/>
         )}
         {showStudents && (
-          <div className="overlay">
-            <AllStudentsList/>
-          </div>
+          <AllStudentsList/>
         )}
         {showNewStudentForm && (
-          <div className="overlay">
-            <NewStudentForm/>
-          </div>
+          <NewStudentForm/>
         )}
         {showStudentCard && (
           <StudentCard/>

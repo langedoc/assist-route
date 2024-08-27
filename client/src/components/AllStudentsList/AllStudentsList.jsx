@@ -21,38 +21,41 @@ function AllStudentsList () {
   }
 
   return (
-    <div className="listContainer">
-      <AiFillCloseCircle
-        className="close"
-        onClick={() => { onClose() }}
-        aria-label="Close"
-      />
-      <button
-        style={{borderRadius: '5px'}}
-        type="button"
-        onClick={() => { onClose(); onSubmit();}}
-      >
-        Add new student
-      </button>
-      <div id="allStudentsList" className="list">
-        {students.map((student) => (
-          <div key={student.id}>
-            <PiStudentDuotone className='studentIcon'/>
-            <button
-              name="studentInfo"
-              value={student.id}
-              type="button"
-              className="btn studentButton"
-              onClick={(e) => {
-                handleSelectStudent(e);
-                onClickOnStudent();
-                onClose()
-              }}
-            >
-              {student.firstName} {student.lastName}
-            </button>
-          </div>
-        ))}
+    <div className="overlay">
+
+      <div className="listContainer">
+        <AiFillCloseCircle
+          className="close"
+          onClick={() => { onClose() }}
+          aria-label="Close"
+        />
+        <button
+          style={{borderRadius: '5px'}}
+          type="button"
+          onClick={() => { onClose(); onSubmit();}}
+        >
+          Add new student
+        </button>
+        <div id="allStudentsList" className="list">
+          {students.map((student) => (
+            <div key={student.id}>
+              <PiStudentDuotone className='studentIcon'/>
+              <button
+                name="studentInfo"
+                value={student.id}
+                type="button"
+                className="btn studentButton"
+                onClick={(e) => {
+                  handleSelectStudent(e);
+                  onClickOnStudent();
+                  onClose()
+                }}
+              >
+                {student.firstName} {student.lastName}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
