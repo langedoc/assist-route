@@ -4,6 +4,7 @@ import { toggleStudentCard } from '../../store/componentsVisibilitySlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectStudents, selectSelectedStudent, setStudents } from '../../store/studentsSlice';
 import { deleteStudent } from '../../store/students-actions';
+import { VscEdit } from "react-icons/vsc";
 
 function StudentCard () {
   
@@ -76,6 +77,7 @@ function StudentCard () {
             style={{borderRadius: '5px'}}
             alt="Edit student"
           >
+            <VscEdit />
             EDIT
           </button>
           <button
