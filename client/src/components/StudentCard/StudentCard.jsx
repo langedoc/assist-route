@@ -21,16 +21,22 @@ function StudentCard () {
     return camelCase.replace(/([A-Z])/g, ' $1').toLowerCase();
   }
 
+  function isISODateString(value) {
+    // To check if the string matches the ISO date format (YYYY-MM-DDTHH:MM:SSZ)
+    return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value);
+  }
+
   function formatDate(dateString) {
     const date = new Date(dateString);
-    return !isNaN(date.getTime()) ? date.toISOString().split('T')[0] : "N/A";//yyyy-mm-dd format
+    return date.toISOString().split('T')[0];
   }
 
   const studentInfoElements = dataToRenderShort.map(([key, value]) => {
-    const formattedValue = 
-      (typeof value === 'string' && !isNaN(new Date(value).getTime())) 
-      ? formatDate(value) 
-      : (value || "");
+    let formattedValue = value;
+
+    if (isISODateString(value)) {
+      formattedValue = formatDate(value);
+    }
 
     return (
       <div key={key} className="studentInfoEl">
