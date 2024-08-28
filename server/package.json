@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "assist-route",
   "version": "1.0.0",
-  "description": "",
+  "description": "Digital helper for a school bus assistant.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -15,5 +15,10 @@
     "express": "^4.19.2",
     "pg": "^8.11.5",
     "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.24.4",
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0"
   }
 }

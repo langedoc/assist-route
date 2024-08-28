@@ -5,6 +5,7 @@ main {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to bottom, #215E82, #d8eaf9);
 }
 button {
   appearance: none;
