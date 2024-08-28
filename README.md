@@ -1,17 +1,25 @@
 # Assist Route
 Assist Route is an application that helps the school bus assistant manage the attendance of students who use the bus, the stops and routes they use and be able to quickly contact the students or their legal guardians.
 
-![image](./image/assist-route-preview.png)
+![image](./image/Routes.png)
 
 ## Features:
 
-✏️ Add, modify and delete student data.
+🚏 Display information about the stops on the selected route.
 
-🚌 Drop-down list to choose the route.
-
-🚏 Display with information about the stops on the selected route.
+![image](./image/Route_info.png)
 
 🎓 Display with information about the students who take the bus at the selected stop.
+
+![image](./image/Student_list.png)
+
+✏️ Add new students.
+
+![image](./image/Student_form.png)
+
+🔍 Check, modify, and delete student data.
+
+![image](./image/Student_card.png)
 
 ## Technologies Used
 
