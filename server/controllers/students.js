@@ -17,7 +17,9 @@ async function addStudent (req, res) {
     res.status(201).json(newStudent); // request fulfilled, new resource created.
   } catch (error) {
     console.log('Missing parameters', error);
-    return res.status(400).json({ error: 'Request cannot be fulfilled, missing parameters' }); // client-side errors
+    return res
+      .status(400)
+      .json({ error: 'Request cannot be fulfilled, missing parameters' }); // client-side errors
   }
 };
 
@@ -27,17 +29,19 @@ async function deleteStudent (req, res) {
     await Student.destroy({
       where: {
         id: studentId
-      }
-    })
+      },
+    });
     res.status(204).send('Deleted');
   } catch (error) {
     console.log(error);
-    return res.status(400).json({ error: 'Delete request cannot be fulfilled' }); // client-side errors
+    return res
+      .status(400)
+      .json({ error: 'Delete request cannot be fulfilled' }); // client-side errors
   }
 };
 
 module.exports = {
   getAllStudents,
   addStudent,
-  deleteStudent
-}
+  deleteStudent,
+};

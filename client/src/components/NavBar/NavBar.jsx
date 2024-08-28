@@ -9,7 +9,7 @@ function NavBar () {
   return (
     <nav>
       <div>
-        <h1 id="projectName" className="lilita-one-regular">
+        <h1 className="abel-regular" style={{ fontSize: "2.7rem" }}>
           ASSIST ROUTE
         </h1>
       </div>

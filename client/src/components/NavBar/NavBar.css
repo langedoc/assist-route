@@ -1,6 +1,5 @@
 nav {
   background-color: #215E82;
-  /* background: linear-gradient(45deg, #215E82, transparent); */
   color: #FFC94C;
   position: relative;
   padding: 15px;
@@ -8,7 +7,4 @@ nav {
   padding-right: 40px;
   display: flex;
   justify-content:space-between;
-}
-#projectName {
-  font-size: xx-large;
 }
