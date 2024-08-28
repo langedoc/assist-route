@@ -74,6 +74,12 @@ button:hover {
   font-style: italic;
   font-weight: 100;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 
 
 

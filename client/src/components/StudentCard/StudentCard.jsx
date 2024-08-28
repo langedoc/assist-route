@@ -69,14 +69,25 @@ function StudentCard () {
         <div className="fieldsList">
           {studentInfoElements}
         </div>
-        <button
-          type="button"
-          name="deleteStudentButton"
-          style={{borderRadius: '5px'}}
-          onClick={()=>{handleDelete(); onClose();}}
-        >
-          DELETE
-        </button>
+        <div className='button-container' >
+          <button
+            type="button"
+            name="editStudentButton"
+            style={{borderRadius: '5px'}}
+            alt="Edit student"
+          >
+            EDIT
+          </button>
+          <button
+            type="button"
+            name="deleteStudentButton"
+            style={{borderRadius: '5px'}}
+            onClick={()=>{handleDelete(); onClose();}}
+            alt="Delete student"
+          >
+            DELETE
+          </button>
+        </div>
       </div>
     </div>
   );
