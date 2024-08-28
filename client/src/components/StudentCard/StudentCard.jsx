@@ -17,18 +17,31 @@ function StudentCard () {
   const dataToRender = Object.entries(studentData);
   const dataToRenderShort = dataToRender.slice(1);
 
-  const studentInfoElements = dataToRenderShort.map(([key, value]) => (
-    <div key={key} className="studentInfoEl">
-      <p id="elValue">
-        <span className="italicThin">{camelToText(key)}: </span>
-        <strong>{value}</strong>
-      </p>  
-    </div>
-  ));
-
   function camelToText (camelCase) {
     return camelCase.replace(/([A-Z])/g, ' $1').toLowerCase();
   }
+
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return !isNaN(date.getTime()) ? date.toISOString().split('T')[0] : "N/A";//yyyy-mm-dd format
+  }
+
+  const studentInfoElements = dataToRenderShort.map(([key, value]) => {
+    const formattedValue = 
+      (typeof value === 'string' && !isNaN(new Date(value).getTime())) 
+      ? formatDate(value) 
+      : (value || "");
+
+    return (
+      <div key={key} className="studentInfoEl">
+        <p id="elValue">
+          <span className="italicThin">{camelToText(key)}: </span>
+          <strong>{formattedValue}</strong>
+        </p>  
+      </div>
+    );
+  });
+
   
   async function handleDelete () {
     // delete student from DB
